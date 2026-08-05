@@ -1,6 +1,6 @@
 # PH Commons Charter
 
-**Status:** Adopted for org stand-up 20260805. Scope corrected same day: not government-only.
+**Status:** Live 20260805. Scope: **gov + others** (any Philippine-based CLI that meets the contract), not government-only.
 
 ## Name
 
@@ -8,103 +8,89 @@
 
 ## Purpose
 
-Agent-native CLIs that turn **Philippine public data surfaces** into stable, local-first, machine-readable substrates for tools and agents.
+Home for **agent-native, Philippine-based CLIs**: government data tools and every other PH-scoped CLI in the family (markets, commercial listings, civic surfaces, etc.).
 
-Surfaces may be:
+Examples already in the trajectory:
 
-- **Government** (e.g. PAGASA, SEC, BSP)
-- **Private / market** (e.g. Philippine Stock Exchange / PSE Edge)
-- **Other public PH sources** when they meet membership rules
-
-Government data is common in the family; it is **not** a scope boundary. PSE is private and in scope.
+- Government: PAGASA, SEC, future BSP-class tools
+- Private market: PSE Edge
+- Commercial / other PH: nowshowing (cinema) — **will be put here eventually**
+- Any further Philippine-based CLI that earns a place under the rules below
 
 ## Audience contract
 
-**Primary:** tool-makers and agent builders who need reliable access to Philippine public data so agents can work with bureaucracy, markets, and related PH systems.
+**Primary:** tool-makers and agent builders equipping agents for Philippine context (bureaucracy, markets, daily PH surfaces).
 
-**Not for:** consumer dashboards, end-user product UIs, life-safety systems, regulatory filing, or use as a substitute for official/vendor market data feeds where those are required.
+**Not for:** treating these CLIs as official feeds, life-safety systems, regulatory filing, or a consumer product line under this brand.
 
 Every CLI states the unofficial contract up front and names the real upstream operator.
 
 ## Scope rules
 
-- One narrow surface or product per CLI at the start (depth before breadth)
-- Operator may be government or private; the test is **public PH data + agent value**, not ownership form
-- Server-rendered HTML extraction is acceptable when no stable public API or tokenless JSON exists
-- Local SQLite is required when upstream is latest-only, so history, drift, and query are possible
-- Every data row or response carries provenance (source + as-of)
-- Strong “Unofficial. Not affiliated…” disclaimer naming the operator, plus life-safety / non-official-feed warnings in every README
-- Apache-2.0 license
+- **Boundary = Philippine-based**, not “government only” and not “public sector data only”
+- **gov + others** — private exchange data, commercial listings (e.g. cinema), and other PH surfaces are in scope when they meet membership rules
+- One narrow surface or product per CLI (depth before breadth)
+- Server-rendered HTML extraction OK when no stable public API / tokenless JSON exists
+- Local SQLite when upstream is latest-only
+- Provenance on every figure (source + as-of)
+- Disclaimer names the operator; Apache-2.0
 
-**Non-goals (for now):** monolith CLI, consumer product, paid hosted service, unbounded multi-source aggregator.
+**Non-goals:** monolith; dumping non-PH tools here; consumer apps; paid hosted service.
 
 ## Technical pattern (Printing Press contract)
 
-- Go + Cobra CLI
-- `--json`, `--agent`, `--select`, `--compact` on commands; auto-JSON when piped
-- Companion MCP server binary (`*-pp-mcp`): stdio default + optional loopback HTTP
-- `doctor` and `which` for health and discovery
-- Local durable store (SQLite) + history / drift when valuable
-- Typed exit codes for agent self-correction
-- Fleet distribution via goreleaser, one-shot installer, and agent skill files
-- `AGENTS.md` / `SKILL.md` for agent consumers
-- CLI naming: `<slug>-pp-cli`
+- Go + Cobra; `--json` / `--agent` / `--select` / `--compact`; auto-JSON when piped
+- `*-pp-mcp` companion; `doctor` / `which`
+- SQLite history/drift when valuable; typed exit codes
+- Fleet: goreleaser + installer + skill files
+- Naming: `<slug>-pp-cli`
 
 ## Repo layout
 
 | Kind | Location | Notes |
 |------|----------|-------|
-| Org hub | `ph-commons/ph-commons` | This repo — index, charter, templates |
-| Reference CLIs (today) | `ngpestelos/pagasa-pp-cli`, `ngpestelos/pse-edge-pp-cli` | Personal until transfer + module rewrite |
-| Future family CLIs | `ph-commons/<slug>-pp-cli` | Preferred home for new work |
+| Org hub | `ph-commons/ph-commons` | Index + charter |
+| Today’s reference CLIs | `ngpestelos/pagasa-pp-cli`, `ngpestelos/pse-edge-pp-cli` | Personal until transfer + rewrite |
+| Eventually | `nowshowing-pp-cli`, `ph-sec-pp-cli`, other PH-based CLIs | Move when source + contract ready |
+| Preferred home for family | `ph-commons/<slug>-pp-cli` | New and transferred work |
 
 ## Membership / inclusion rules
 
 A CLI belongs under PH Commons if it:
 
-1. Wraps a **Philippine public data surface** (government, private market infrastructure, or other public PH source — not government-only)
-2. Is narrow (one primary surface or data product)
-3. Follows the full agent contract (JSON/agent/MCP + provenance + local state where needed)
-4. Carries required disclaimer language naming the operator, and Apache-2.0
-5. Is produced under Printing Press discipline (or manually kept to the same contract)
-6. Respects product-only trajectory: clear personal/agent need before significant build
+1. Is **Philippine-based** (PH government, PH private/market, PH commercial/civic, or clearly PH-scoped)
+2. Is narrow (one primary surface or product)
+3. Follows the full agent contract
+4. Carries disclaimer + Apache-2.0
+5. Follows Printing Press discipline (or equivalent by hand)
+6. Has clear personal/agent demand before significant build
 
-One-off scripts, broad scrapers without durable local value, non-PH sources (unless explicitly sibling-listed), and consumer-facing apps stay outside.
+Non-PH CLIs (e.g. generic vuln desk) stay outside even if they share the generator.
 
 ## README template obligations
 
-Every CLI README must include (order flexible):
-
-- Strong unofficial / not-affiliated banner naming the operator, link to official site, life-safety / non-official-feed warning
-- Install section (`go install` and verified one-shot curl installer)
-- Quick-start examples for humans and `--json` / `--agent`
-- Commands table
-- Local store value (history, drift) when upstream does not keep history
-- Provenance note: figures carry source + as-of
-- License line: Apache-2.0
-- Link to PH Commons hub / this charter
-- MCP server paragraph when present
+- Unofficial banner naming operator + official link + warnings
+- Install (`go install` + one-shot installer)
+- Human and agent quick start; commands table
+- Local store value when relevant; provenance; Apache-2.0
+- Link to hub / this charter; MCP paragraph when present
 
 ## Mandatory disclaimer language (adapt per surface)
 
-> **Unofficial.** This is an independent, community-built tool **not affiliated with, endorsed by, or supported by** [Operator]. It uses publicly available data; upstream structure can change and break extraction without notice. For official data, consult [official site] directly — **never rely on this tool for life-safety decisions, regulatory submissions, or decisions that require an official or licensed feed.**
+> **Unofficial.** This is an independent, community-built tool **not affiliated with, endorsed by, or supported by** [Operator]. Upstream data and structure can change without notice. For official data, consult [official site] directly — **never rely on this tool for life-safety decisions, regulatory submissions, or decisions that require an official or licensed feed.**
 
 ## Governance (early stage)
 
-- Single author / maintainer
-- Charter changes by maintainer judgment; record material changes in this file
-- Product-only: no sell-hours targets; no hard “fan count” goals
+- Single maintainer
+- Own-pace; product-only (no sell-hours / fan-count targets)
+- Material charter changes recorded in Changelog below
 
 ## Transfer policy
 
-Do not move existing personal repos into this org without a simultaneous rewrite of:
-
-- `go.mod` module path → `github.com/ph-commons/<cli>`
-- install scripts, README install lines, skills, goreleaser, fleet pins
-
-Partial transfer (repo under org, module path still personal) is discouraged except as a short, documented interim.
+No repo move into the org without simultaneous rewrite of module path (`github.com/ph-commons/<cli>`), install scripts, README, skills, goreleaser, and fleet pins.
 
 ## Changelog
 
-- **20260805** — Org stand-up; hub published
-- **20260805** — Scope correction: not restricted to government data; PSE (private) explicitly in scope
+- **20260805** — Org + hub stand-up
+- **20260805** — Not government-only; PSE (private) in scope
+- **20260805** — Scope restated **gov + others**: any Philippine-based CLI (including nowshowing and future PH CLIs) may land here eventually
