@@ -14,7 +14,7 @@ Examples already in the trajectory:
 
 - Government: PAGASA, SEC, future BSP-class tools
 - Private market: PSE Edge
-- Commercial / other PH: nowshowing (cinema) — **will be put here eventually**
+- Commercial / other PH: nowshowing (cinema) — **in org** as [`ph-commons/nowshowing-pp-cli`](https://github.com/ph-commons/nowshowing-pp-cli) (20260810)
 - Any further Philippine-based CLI that earns a place under the rules below
 
 ## Audience contract
@@ -95,3 +95,4 @@ No repo move into the org without simultaneous rewrite of module path (`github.c
 - **20260805** — Org + hub stand-up
 - **20260805** — Not government-only; PSE (private) in scope
 - **20260805** — Scope restated **gov + others**: any Philippine-based CLI (including nowshowing and future PH CLIs) may land here eventually
+- **20260810** — `nowshowing-pp-cli` transferred to `ph-commons/nowshowing-pp-cli` with full module-path + install + skill rewrite

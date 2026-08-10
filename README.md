@@ -79,7 +79,7 @@ Any other **Philippine-based** CLI that meets the charter (narrow surface, agent
 1. Hub stays the front door
 2. Affiliate personal repos (badges/links) without breaking module paths
 3. Transfer under `ph-commons/*` only with full module-path + install + skill rewrite
-4. Fold in **nowshowing** and other PH-based CLIs when ready
+4. Fold in remaining PH-based CLIs when ready (**nowshowing** in-org 20260810)
 5. New seeds when demand is clear (e.g. BSP and other high-value surfaces)
 
 ## Maintainer
