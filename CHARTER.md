@@ -51,7 +51,8 @@ Every CLI states the unofficial contract up front and names the real upstream op
 |------|----------|-------|
 | Org hub | `ph-commons/ph-commons` | Index + charter |
 | Today’s reference CLIs | `ngpestelos/pagasa-pp-cli`, `ngpestelos/pse-edge-pp-cli` | Personal until transfer + rewrite |
-| Eventually | `nowshowing-pp-cli`, `ph-sec-pp-cli`, other PH-based CLIs | Move when source + contract ready |
+| In org | `ph-commons/nowshowing-pp-cli` | Transferred + module rewrite 20260810 |
+| Eventually | `ph-sec-pp-cli`, other PH-based CLIs | Move when source + contract ready |
 | Preferred home for family | `ph-commons/<slug>-pp-cli` | New and transferred work |
 
 ## Membership / inclusion rules
