@@ -19,23 +19,18 @@ PAGASA, PSE, cinema schedules, registries, markets, local services: one org for 
 
 ### In family now (reference implementations)
 
-Full Printing Press contract. `nowshowing-pp-cli` lives under this org; PAGASA/PSE remain personal until their transfer + module rewrite.
+Full Printing Press contract. `nowshowing-pp-cli`, `pagasa-pp-cli`, and `ph-sec-pp-cli` live under this org (PAGASA and PH SEC transferred 2026-08-12; module-path rewrite still pending, so `go install` continues to resolve via the old `ngpestelos/*` path until that follow-up lands). PSE remains personal until its transfer + module rewrite.
 
 | Surface | Kind | CLI | Repo |
 |---------|------|-----|------|
-| PAGASA weather / cyclones | Government | `pagasa-pp-cli` | [ngpestelos/pagasa-pp-cli](https://github.com/ngpestelos/pagasa-pp-cli) |
+| PAGASA weather / cyclones | Government | `pagasa-pp-cli` | [ph-commons/pagasa-pp-cli](https://github.com/ph-commons/pagasa-pp-cli) |
+| PH SEC registry (narrow) | Government | `ph-sec-pp-cli` | [ph-commons/ph-sec-pp-cli](https://github.com/ph-commons/ph-sec-pp-cli) |
 | PSE Edge equities / disclosures | Private market (PSE) | `pse-edge-pp-cli` | [ngpestelos/pse-edge-pp-cli](https://github.com/ngpestelos/pse-edge-pp-cli) |
 | Metro Manila / Iloilo cinema | Commercial / listings | `nowshowing-pp-cli` | [ph-commons/nowshowing-pp-cli](https://github.com/ph-commons/nowshowing-pp-cli) |
 
 ### Heading here eventually
 
-Philippine-based CLIs that will move under this org when source and contract are ready. Not a promise of dates — own-pace.
-
-| Surface | Kind | CLI | Repo (today) |
-|---------|------|-----|----------------|
-| PH SEC registry (narrow) | Government | `ph-sec-pp-cli` | [ngpestelos/ph-sec-pp-cli](https://github.com/ngpestelos/ph-sec-pp-cli) |
-
-Any other **Philippine-based** CLI that meets the charter (narrow surface, agent contract, disclaimer, Apache-2.0) is a candidate for this org over time.
+Nothing currently queued. Any other **Philippine-based** CLI that meets the charter (narrow surface, agent contract, disclaimer, Apache-2.0) is a candidate for this org over time.
 
 ### Sibling only (not PH Commons membership)
 
@@ -79,7 +74,7 @@ Any other **Philippine-based** CLI that meets the charter (narrow surface, agent
 1. Hub stays the front door
 2. Affiliate personal repos (badges/links) without breaking module paths
 3. Transfer under `ph-commons/*` only with full module-path + install + skill rewrite
-4. Fold in remaining PH-based CLIs when ready (**nowshowing** in-org 20260810)
+4. Fold in remaining PH-based CLIs when ready (**nowshowing** in-org 20260810; **pagasa**, **ph-sec** in-org 20260812, module-path rewrite pending)
 5. New seeds when demand is clear (e.g. BSP and other high-value surfaces)
 
 ## Maintainer
