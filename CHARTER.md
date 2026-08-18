@@ -50,8 +50,8 @@ Every CLI states the unofficial contract up front and names the real upstream op
 | Kind | Location | Notes |
 |------|----------|-------|
 | Org hub | `ph-commons/ph-commons` | Index + charter |
-| Today’s reference CLIs | `ngpestelos/pagasa-pp-cli`, `ngpestelos/pse-edge-pp-cli` | Personal until transfer + rewrite |
-| In org | `ph-commons/nowshowing-pp-cli` | Transferred + module rewrite 20260810 |
+| Today’s reference CLIs | `ph-commons/pagasa-pp-cli`, `ph-commons/pse-edge-pp-cli` | In-org (PSE 20260818) |
+| In org | `nowshowing` 20260810 · `pagasa`/`ph-sec` 20260812 · `pse-edge` 20260818 | Full module rewrite + patch tag |
 | Eventually | `ph-sec-pp-cli`, other PH-based CLIs | Move when source + contract ready |
 | Preferred home for family | `ph-commons/<slug>-pp-cli` | New and transferred work |
 
@@ -96,3 +96,4 @@ No repo move into the org without simultaneous rewrite of module path (`github.c
 - **20260805** — Not government-only; PSE (private) in scope
 - **20260805** — Scope restated **gov + others**: any Philippine-based CLI (including nowshowing and future PH CLIs) may land here eventually
 - **20260810** — `nowshowing-pp-cli` transferred to `ph-commons/nowshowing-pp-cli` with full module-path + install + skill rewrite
+- **20260818** — `pse-edge-pp-cli` transferred; module rewrite; **v0.1.5**

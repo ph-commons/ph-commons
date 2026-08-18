@@ -19,13 +19,21 @@ PAGASA, PSE, cinema schedules, registries, markets, local services: one org for 
 
 ### In family now (reference implementations)
 
+<<<<<<< Updated upstream
 Full Printing Press contract. `nowshowing-pp-cli`, `pagasa-pp-cli`, and `ph-sec-pp-cli` live under this org (PAGASA and PH SEC transferred 2026-08-12; module-path rewrite still pending, so `go install` continues to resolve via the old `ngpestelos/*` path until that follow-up lands). PSE remains personal until its transfer + module rewrite.
+=======
+Full Printing Press contract. PAGASA, PSE Edge, nowshowing, and PH SEC live under this org.
+>>>>>>> Stashed changes
 
 | Surface | Kind | CLI | Repo |
 |---------|------|-----|------|
 | PAGASA weather / cyclones | Government | `pagasa-pp-cli` | [ph-commons/pagasa-pp-cli](https://github.com/ph-commons/pagasa-pp-cli) |
+<<<<<<< Updated upstream
 | PH SEC registry (narrow) | Government | `ph-sec-pp-cli` | [ph-commons/ph-sec-pp-cli](https://github.com/ph-commons/ph-sec-pp-cli) |
 | PSE Edge equities / disclosures | Private market (PSE) | `pse-edge-pp-cli` | [ngpestelos/pse-edge-pp-cli](https://github.com/ngpestelos/pse-edge-pp-cli) |
+=======
+| PSE Edge equities / disclosures | Private market (PSE) | `pse-edge-pp-cli` | [ph-commons/pse-edge-pp-cli](https://github.com/ph-commons/pse-edge-pp-cli) |
+>>>>>>> Stashed changes
 | Metro Manila / Iloilo cinema | Commercial / listings | `nowshowing-pp-cli` | [ph-commons/nowshowing-pp-cli](https://github.com/ph-commons/nowshowing-pp-cli) |
 
 ### Heading here eventually
